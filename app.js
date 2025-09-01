@@ -1,17 +1,19 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-
+// Creación de variables Const y Let
 const listaAmigos=[];
 const ingresoAmigo = document.getElementById("amigo");
 const ListadoDeAmigos = document.getElementById("listaAmigos");
 const nombreAmigoSecreto= document.getElementById("resultado");
 let intentos=0;
 
+//Función para limpiar el campo de entrada después de agregar un nombre
 function limpiarCaja(){
-    //let cajaLimpia= parseInt(document.getElementById('amigo').value);
+    
     document.querySelector('#amigo').value = '';
     
 }
 
+//Función qye valida el nombre ingresado, lo agrega a la lista y actualiza interfaz
 function agregarAmigo() {
     if (!ingresoAmigo.value){
         //Alerta para que el texto no esté vacío
@@ -19,9 +21,7 @@ function agregarAmigo() {
     } else{
         
     listaAmigos.push(ingresoAmigo.value);
-    //console.log(listaAmigos);
-    //ListadoDeAmigos s.innerHTML = ListadoDeAmigos s.innerHTML +  ingresoAmigo.value;
-    //ListadoDeAmigos s.innerHTML +=  ingresoAmigo.value;
+    
     //Agrega los nommbres en lista 
     
      ListadoDeAmigos.innerHTML += `<li>${ingresoAmigo.value}</li>`;
@@ -32,7 +32,7 @@ function agregarAmigo() {
 }
 
 
-
+//Función que selecciona aleatoriamente un nombre de la lista y lo muestra como el "amigo secreto"
 function sortearAmigo(){
     const random = Math.floor(Math.random()* listaAmigos.length);
     //console.log(random)
